@@ -27,7 +27,7 @@ class _IndicacoesPageState extends State<IndicacoesPage> {
         title: const Text('AstroAPP'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(32),
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
         child: ListView(
           children: [
             const Text(
@@ -35,7 +35,7 @@ class _IndicacoesPageState extends State<IndicacoesPage> {
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 32),
           ),
-            SizedBox(height: 16,),
+            SizedBox(height: 24,),
             principalListView()
           ],
         ),

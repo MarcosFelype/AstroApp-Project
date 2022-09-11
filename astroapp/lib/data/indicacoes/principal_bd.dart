@@ -17,6 +17,11 @@ class PrincipalData {
       imagem:
           'https://cdn.iconscout.com/icon/free/png-256/youtube-268-721990.png',
     ),
+    PrincipalDomain(
+      titulocard: 'Outras Redes',
+      imagem:
+          'https://cdn.iconscout.com/icon/free/png-256/youtube-268-721990.png',
+    ),
     
   ];
 

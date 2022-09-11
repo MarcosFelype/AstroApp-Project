@@ -32,7 +32,8 @@ class _CardLivrosState extends State<CardLivros> {
     return Column(
       children: [
         Container(
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        margin: EdgeInsets.only(bottom:24),
         decoration: BoxDecoration(
           color: Colors.grey,
           border: Border.all(

@@ -2,6 +2,8 @@ import 'package:astroapp/data/indicacoes/subPagesData/livros.dart';
 import 'package:astroapp/domain/indicacoes/principal_domain.dart';
 import 'package:astroapp/domain/indicacoes/subPagesDomain/livros.dart';
 import 'package:astroapp/pages/indicacoes/subPages/livros.dart';
+import 'package:astroapp/pages/indicacoes/subPages/sites.dart';
+import 'package:astroapp/pages/indicacoes/subPages/youtube.dart';
 import 'package:astroapp/widget/indicacoes/subPages/livros.dart';
 import 'package:astroapp/widget/indicacoes/subPages/redes.dart';
 import 'package:astroapp/widget/indicacoes/subPages/sites.dart';
@@ -18,70 +20,53 @@ class IndicacoesCard extends StatefulWidget {
 }
 
 class _IndicacoesCardState extends State<IndicacoesCard> {
-
   Future<List<LivrosDomain>> lista_livros = LivrosData.getLivros();
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey,
-          border: Border.all(
-            color: Colors.black,
-            width: 2,
-            style: BorderStyle.solid,
+        child: Container(
+          margin: EdgeInsets.only(bottom: 24),
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            border: Border.all(
+              color: Colors.black,
+              width: 2,
+              style: BorderStyle.solid,
+            ),
+            borderRadius: BorderRadius.circular(16),
           ),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          children: [
-            Text(
-              widget.principal_domain.titulocard,
-              style: TextStyle(
-                fontSize: 24,
+          child: Column(
+            children: [
+              Text(
+                widget.principal_domain.titulocard,
+                style: TextStyle(
+                  fontSize: 24,
+                ),
               ),
-            ),
-            Image.network(
-              widget.principal_domain.imagem,
-              width: 200,
-              height: 100,
-            ),
-            SizedBox(height: 16,),
-          ],
+              Image.network(
+                widget.principal_domain.imagem,
+                width: 200,
+                height: 100,
+              ),
+              SizedBox(
+                height: 16,
+              ),
+            ],
+          ),
         ),
-      ),
-      onTap: onTap
-    );
+        onTap: onTap);
   }
 
   void onTap() {
     if (widget.principal_domain.titulocard == 'Canais do YouTube') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => CardYoutube(),
-        ),
-      );
+      youtubeBuilder();
     } else if (widget.principal_domain.titulocard == 'Sites') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => CardSites(),
-        ),
-      );
+      sitesBuilder();
     } else if (widget.principal_domain.titulocard ==
         'Livros e materiais diversos') {
-          livrosBuilder();
-      /*Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => CardLivros(livrosDomain: ),
-        ),
-      );*/
-
-      
-    }else{
+      livrosBuilder();
+    } else {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -90,12 +75,30 @@ class _IndicacoesCardState extends State<IndicacoesCard> {
       );
     }
   }
-  
+
   livrosBuilder() {
     return Navigator.push(
-      context, 
+      context,
       MaterialPageRoute(
         builder: (context) => const Livros(),
+      ),
+    );
+  }
+
+  youtubeBuilder() {
+    return Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const YouTube(),
+      ),
+    );
+  }
+
+  sitesBuilder() {
+    return Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Sites(),
       ),
     );
   }
