@@ -10,17 +10,17 @@ class PrincipalData {
     PrincipalDomain(
       titulocard: 'Sites',
       imagem:
-          'https://cdn.iconscout.com/icon/free/png-256/youtube-268-721990.png',
+          'https://upload.wikimedia.org/wikipedia/commons/5/5f/Website.png',
     ),
     PrincipalDomain(
       titulocard: 'Livros e materiais diversos',
       imagem:
-          'https://cdn.iconscout.com/icon/free/png-256/youtube-268-721990.png',
+          'https://publicdomainvectors.org/photos/StackOfBooks.png',
     ),
     PrincipalDomain(
       titulocard: 'Outras Redes',
       imagem:
-          'https://cdn.iconscout.com/icon/free/png-256/youtube-268-721990.png',
+          'https://c.pxhere.com/images/48/55/ea3e6a6c6dc4c0aad03ba603702e-1564111.jpg!d',
     ),
     
   ];
