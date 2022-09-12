@@ -2,6 +2,7 @@ import 'package:astroapp/pages/conteudos_astronomia/planetas.dart';
 import 'package:astroapp/pages/indicacoes/principal.dart';
 import 'package:astroapp/pages/menu_astronautica.dart';
 import 'package:astroapp/pages/menu_astronomia.dart';
+import 'package:astroapp/pages/noticias/noticicaI.dart';
 import 'package:astroapp/pages/noticiasPage.dart';
 import 'package:astroapp/pages/novidadesPage.dart';
 import 'package:astroapp/pages/sobre.dart';
@@ -161,7 +162,8 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Menu_Astronomia()),
+                          MaterialPageRoute(
+                              builder: (context) => Menu_Astronomia()),
                         );
                       },
                     ),
@@ -217,7 +219,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onTap: () {
                         Navigator.push(
-                          context, MaterialPageRoute(
+                          context,
+                          MaterialPageRoute(
                             builder: ((context) => NovidadesPage()),
                           ),
                         );
@@ -233,12 +236,10 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 24,
                         ),
                       ),
-                      onTap: (){
+                      onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => Sobre()
-                          ),
+                          MaterialPageRoute(builder: (context) => Sobre()),
                         );
                       },
                     ),
@@ -268,14 +269,12 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => NoticiasPage(),
                     ));
                   },
-                  child: Text(
-                      'VER MAIS'
-                  ),
+                  child: Text('VER MAIS'),
                 ),
               ),
 
@@ -286,8 +285,8 @@ class _HomePageState extends State<HomePage> {
                   top: 10,
                 ),
                 child: Text(
-                    'Tópicos da semana',
-                    style: TextStyle(
+                  'Tópicos da semana',
+                  style: TextStyle(
                     fontSize: 35,
                   ),
                 ),
@@ -298,7 +297,6 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey,
                   width: 400,
                   height: 270,
-
                   child: Column(
                     children: [
                       Padding(
@@ -310,27 +308,22 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-
                       Image.network(
                         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVrLVOeETJ1JaRoTqErkXH8qFSf-hhykYFQQ&usqp=CAU',
                         width: 375,
                         height: 170,
                       ),
-
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: ElevatedButton(
-                          onPressed: (){
+                          onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => Planetas(),
                             ));
                           },
-                          child: Text(
-                            'VER MAIS'
-                          ),
+                          child: Text('VER MAIS'),
                         ),
                       ),
-
                     ],
                   ),
                 ),
@@ -355,7 +348,6 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey,
                   width: 400,
                   height: 390,
-
                   child: Column(
                     children: [
                       Center(
@@ -371,7 +363,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           'O AstroAPP é um projeto de origem '
                           'escolar voltado para difusão da '
-                        'astronomia. Nosso objetivo é '
+                          'astronomia. Nosso objetivo é '
                           'encantar as pessoas com a beleza do '
                           'cosmos, em tudo que o concerne.',
                           textAlign: TextAlign.justify,
@@ -380,27 +372,22 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-
                       Container(
                           margin: EdgeInsetsDirectional.only(top: 15),
                           width: 110,
                           height: 110,
                           child: Image.asset('assets/logo_astroapp.png')),
-
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: ElevatedButton(
-                          onPressed: (){
+                          onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => Sobre(),
                             ));
                           },
-                          child: Text(
-                              'VER MAIS'
-                          ),
+                          child: Text('VER MAIS'),
                         ),
                       ),
-
                     ],
                   ),
                 ),
@@ -414,7 +401,7 @@ class _HomePageState extends State<HomePage> {
     return InkWell(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => NoticiasPage(),
+          builder: (context) => NoticiasI(),
         ));
       },
       child: FutureBuilder<List<Noticias>>(
