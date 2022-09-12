@@ -264,11 +264,21 @@ class _HomePageState extends State<HomePage> {
               ),
               buildListView(),
 
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ElevatedButton(
+                  onPressed: (){},
+                  child: Text(
+                      'VER MAIS'
+                  ),
+                ),
+              ),
+
               //TÓPICOS DA SEMANA
 
               Padding(
                 padding: EdgeInsets.only(
-                  top: 25,
+                  top: 10,
                 ),
                 child: Text(
                     'Tópicos da semana',
