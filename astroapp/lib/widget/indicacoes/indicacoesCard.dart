@@ -70,7 +70,7 @@ class _IndicacoesCardState extends State<IndicacoesCard> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => CardRedes(),
+          builder: (context) => OutrasRedes(),
         ),
       );
     }
