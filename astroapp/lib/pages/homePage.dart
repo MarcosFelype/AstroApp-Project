@@ -264,6 +264,8 @@ class _HomePageState extends State<HomePage> {
               ),
               buildListView(),
 
+              //TÓPICOS DA SEMANA
+
               Padding(
                 padding: EdgeInsets.only(
                   top: 25,
@@ -306,6 +308,72 @@ class _HomePageState extends State<HomePage> {
                           onPressed: (){},
                           child: Text(
                             'VER MAIS'
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ),
+              ),
+
+              //NOVIDADES
+
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 25,
+                ),
+                child: Text(
+                  'Sobre',
+                  style: TextStyle(
+                    fontSize: 35,
+                  ),
+                ),
+              ),
+              Center(
+                child: Container(
+                  margin: EdgeInsets.all(15.0),
+                  color: Colors.grey,
+                  width: 400,
+                  height: 390,
+
+                  child: Column(
+                    children: [
+                      Center(
+                        child: Text(
+                          'Quem somos',
+                          style: TextStyle(
+                            fontSize: 29,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          'O AstroAPP é um projeto de origem '
+                          'escolar voltado para difusão da '
+                        'astronomia. Nosso objetivo é '
+                          'encantar as pessoas com a beleza do '
+                          'cosmos, em tudo que o concerne.',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                          margin: EdgeInsetsDirectional.only(top: 15),
+                          width: 100,
+                          height: 100,
+                          child: Image.asset('assets/logo_astroapp.png')),
+
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: ElevatedButton(
+                          onPressed: (){},
+                          child: Text(
+                              'VER MAIS'
                           ),
                         ),
                       ),
