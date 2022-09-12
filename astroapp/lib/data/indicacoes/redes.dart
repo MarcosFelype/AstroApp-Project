@@ -27,7 +27,8 @@ class RedesData {
     ),
   ];
 
-  static List<RedesDomain> getRedes() {
+  static Future<List<RedesDomain>> getRedes() async{
+    await Future.delayed(Duration(seconds: 10));
     return lista_redes;
   }
 }
