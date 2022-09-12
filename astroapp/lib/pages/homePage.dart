@@ -268,7 +268,11 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => NoticiasPage(),
+                    ));
+                  },
                   child: Text(
                       'VER MAIS'
                   ),
