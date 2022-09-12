@@ -1,3 +1,4 @@
+import 'package:astroapp/pages/conteudos_astronomia/planetas.dart';
 import 'package:astroapp/pages/indicacoes/principal.dart';
 import 'package:astroapp/pages/menu_astronautica.dart';
 import 'package:astroapp/pages/menu_astronomia.dart';
@@ -315,7 +316,11 @@ class _HomePageState extends State<HomePage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Planetas(),
+                            ));
+                          },
                           child: Text(
                             'VER MAIS'
                           ),
@@ -374,14 +379,18 @@ class _HomePageState extends State<HomePage> {
 
                       Container(
                           margin: EdgeInsetsDirectional.only(top: 15),
-                          width: 100,
-                          height: 100,
+                          width: 110,
+                          height: 110,
                           child: Image.asset('assets/logo_astroapp.png')),
 
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Sobre(),
+                            ));
+                          },
                           child: Text(
                               'VER MAIS'
                           ),
