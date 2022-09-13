@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class Sobre extends StatefulWidget {
-  const Sobre({Key? key}) : super(key: key);
+  final List sobre;
+  final List sobreDesenvolvedores;
+  final List sobreRota;
+
+  const Sobre({
+    Key? key,
+    required this.sobre,
+    required this.sobreDesenvolvedores,
+    required this.sobreRota,
+    }) : super(key: key);
 
   @override
   _SobreState createState() => _SobreState();
@@ -44,8 +54,8 @@ class _SobreState extends State<Sobre> {
                         )),
                         const SizedBox(height: 16),
                         Container(
-                          child: Image.network(
-                            'https://www.alagoas24horas.com.br/wp-content/uploads/2021/01/IfalArapiraca2.jpeg',
+                          child: Image.asset(
+                            'assets/if.jpg',
                           ),
                         ),
 
@@ -66,175 +76,229 @@ class _SobreState extends State<Sobre> {
                             style: TextStyle(
                               fontSize: 20,
                             ),
+                            textAlign: TextAlign.center,
                           ),
                         ),
 
-                        /*
                         Container(
-                          padding: const EdgeInsets.only(left: 10, bottom: 6),
-                            child: new Row(children: [
-                              new Row(children: [
-                                Image.network(
-                                  'https://logospng.org/download/whatsapp/logo-whatsapp-verde-icone-ios-android-256.png',
-                                  height: 24,
-                                  width: 24,
+                          padding: const EdgeInsets.only(),
+                          child: Wrap(
+                            spacing: 8.0, // gap between adjacent chips
+                            runSpacing: 4.0, // gap between lines
+                            children: [
+                              InkWell(
+                            child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,  
+                            children: [    
+                              buildImage(1),
+                              Text(
+                                widget.sobreDesenvolvedores[5].desenvolvedores,
+                                style: const TextStyle(
+                                  fontSize: 20,
                                 ),
-                                Text(
-                                  'Daniel Berg',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 16),
-                                ),
-                              ]),
-                              
-                              new Row(children: [
-                                Image.network(
-                                  'https://logospng.org/download/whatsapp/logo-whatsapp-verde-icone-ios-android-256.png',
-                                  height: 24,
-                                  width: 24,
-                                ),
-                                Text(
-                                  'Içami Costa',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 16),
-                                ),
-                              ]),
-                              new Row(children: [
-                                Image.network(
-                                  'https://logospng.org/download/whatsapp/logo-whatsapp-verde-icone-ios-android-256.png',
-                                  height: 24,
-                                  width: 24,
-                                ),
-                                Text(
-                                  'Marcos Felype',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 16),
-                                ),
-                              ]),
-                              new Row(children: [
-                                Image.network(
-                                  'https://logospng.org/download/whatsapp/logo-whatsapp-verde-icone-ios-android-256.png',
-                                  height: 24,
-                                  width: 24,
-                                ),
-                                Text(
-                                  'Ricardo Alexandre',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 16),
-                                ),
-                              ]),
-                              new Row(children: [
-                                Image.network(
-                                  'https://logospng.org/download/whatsapp/logo-whatsapp-verde-icone-ios-android-256.png',
-                                  height: 24,
-                                  width: 24,
-                                ),
-                                Text(
-                                  'Vítor Magalhães',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ]),
+                                textAlign: TextAlign.center,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 16),
+                              ),
                             ]),
-                        ),
-                        */
+                            onTap: () {
+                                open(5);
+                          },
+                          ),
+                            
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(1),
+                              Text(
+                                widget.sobreDesenvolvedores[6].desenvolvedores,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 16),
+                              ),
+                            ]),
+                            onTap: () {
+                                open(6);
+                          },
+                          ),
 
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(1),
+                              Text(
+                                widget.sobreDesenvolvedores[7].desenvolvedores,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                             const Padding(
+                                padding: EdgeInsets.only(right: 16),
+                              ),
+                            ]),
+                            onTap: () {
+                                open(7);
+                          },
+                          ),
+
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(1),
+                              Text(
+                                widget.sobreDesenvolvedores[8].desenvolvedores,
+                                style: const TextStyle(
+                                   fontSize: 20,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 16),
+                              ),
+                            ]),
+                            onTap: () {
+                                open(8);
+                          },
+                          ),
+
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(1),
+                              Text(
+                                widget.sobreDesenvolvedores[9].desenvolvedores,
+                                style: const TextStyle(
+                                  fontSize: 20,  
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ]),
+                            onTap: () {
+                                open(9);
+                          },
+                          ),
+
+                          ]),
+                        ),
+                        
                         Container(
-                          padding: const EdgeInsets.only(left: 6),
-                          child: new Row(children: [
-                            new Row(children: [
-                              Image.network(
-                                'https://images.vexels.com/media/users/3/137198/isolated/lists/07f0d7b69ef071571e4ada2f4d6a053a-icone-do-instagram-colorido.png',
-                                height: 32,
-                                width: 32,
-                              ),
+                          padding: const EdgeInsets.only(top: 50),
+                          child: Wrap(
+                            spacing: 8.0, // gap between adjacent chips
+                            runSpacing: 4.0, // gap between lines
+                            children: [
+                              InkWell(
+                            child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,  
+                            children: [    
+                              buildImage(0),
                               Text(
-                                '@daniel_dbs7',
-                                style: TextStyle(
+                                widget.sobreDesenvolvedores[0].desenvolvedores,
+                                style: const TextStyle(
                                   fontSize: 20,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 16),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 16),
                               ),
                             ]),
-                            new Row(children: [
-                              Image.network(
-                                'https://images.vexels.com/media/users/3/137198/isolated/lists/07f0d7b69ef071571e4ada2f4d6a053a-icone-do-instagram-colorido.png',
-                                height: 32,
-                                width: 32,
-                              ),
+                            onTap: () {
+                                open(0);
+                          },
+                          ),
+                            
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(0),
                               Text(
-                                '@icamicosta',
-                                style: TextStyle(
+                                widget.sobreDesenvolvedores[1].desenvolvedores,
+                                style: const TextStyle(
                                   fontSize: 20,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 16),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 16),
                               ),
                             ]),
-                            new Row(children: [
-                              Image.network(
-                                'https://images.vexels.com/media/users/3/137198/isolated/lists/07f0d7b69ef071571e4ada2f4d6a053a-icone-do-instagram-colorido.png',
-                                height: 32,
-                                width: 32,
-                              ),
+                            onTap: () {
+                                open(1);
+                          },
+                          ),
+
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(0),
                               Text(
-                                '@marcosfelypesilva',
-                                style: TextStyle(
+                                widget.sobreDesenvolvedores[2].desenvolvedores,
+                                style: const TextStyle(
                                   fontSize: 20,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 16),
+                             const Padding(
+                                padding: EdgeInsets.only(right: 16),
                               ),
                             ]),
-                            new Row(children: [
-                              Image.network(
-                                'https://images.vexels.com/media/users/3/137198/isolated/lists/07f0d7b69ef071571e4ada2f4d6a053a-icone-do-instagram-colorido.png',
-                                height: 32,
-                                width: 32,
-                              ),
+                            onTap: () {
+                                open(2);
+                          },
+                          ),
+
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(0),
                               Text(
-                                '@richardo_ahl.sill',
-                                style: TextStyle(
-                                  fontSize: 20,
+                                widget.sobreDesenvolvedores[3].desenvolvedores,
+                                style: const TextStyle(
+                                   fontSize: 20,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 16),
+                              const Padding(
+                                padding: EdgeInsets.only(right: 16),
                               ),
                             ]),
-                            new Row(children: [
-                              Image.network(
-                                'https://images.vexels.com/media/users/3/137198/isolated/lists/07f0d7b69ef071571e4ada2f4d6a053a-icone-do-instagram-colorido.png',
-                                height: 32,
-                                width: 32,
-                              ),
+                            onTap: () {
+                                open(3);
+                          },
+                          ),
+
+                            InkWell(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                              buildImage(0),
                               Text(
-                                '@v_magalhaees',
-                                style: TextStyle(
-                                  fontSize: 20,
+                                widget.sobreDesenvolvedores[4].desenvolvedores,
+                                style: const TextStyle(
+                                  fontSize: 20,  
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                             ]),
+                            onTap: () {
+                                open(4);
+                          },
+                          ),
+
                           ]),
                         ),
                       ],
@@ -248,4 +312,32 @@ class _SobreState extends State<Sobre> {
       ),
     );
   }
+
+  buildImage(int i) {
+    return Stack(
+      children: [
+        ClipRRect(
+          borderRadius: const BorderRadius.vertical(
+            top: Radius.circular(8),
+          ),
+          child: Image.asset(widget.sobre[i].img,
+          height: 32,
+          width: 32,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Future<void> open(int i) async {
+    final Uri _url = Uri.parse(widget.sobreRota[i].rota);
+
+    if(!await launchUrl(
+      _url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $_url';
+    }
+  }
+
 }
