@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(),
+                              builder: (context) => NoticiasPage(),
                             ),
                           );
                         }),
@@ -239,7 +239,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Sobre()),
+                          MaterialPageRoute(builder: (context) => Sobre(sobre: BD.listaSobre, sobreDesenvolvedores: BD.listaSobreDesenvolvedores, sobreRota: BD.listaRota)),
                         );
                       },
                     ),
@@ -329,7 +329,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              //NOVIDADES
+              //Sobre
 
               Padding(
                 padding: EdgeInsets.only(
@@ -382,7 +382,7 @@ class _HomePageState extends State<HomePage> {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Sobre(),
+                              builder: (context) => Sobre(sobre: BD.listaSobre, sobreDesenvolvedores: BD.listaSobreDesenvolvedores, sobreRota: BD.listaRota),
                             ));
                           },
                           child: Text('VER MAIS'),
