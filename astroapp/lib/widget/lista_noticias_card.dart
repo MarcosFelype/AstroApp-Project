@@ -36,14 +36,14 @@ class _CardNoticiasState extends State<CardNoticias> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ]
-              ),
+                  ]),
             )
           ],
         ),
       ),
     );
   }
+
   buildImage() {
     return Stack(
       children: [

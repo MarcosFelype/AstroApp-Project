@@ -1,3 +1,4 @@
+import 'package:astroapp/domain/topicos.dart';
 import 'package:astroapp/pages/conteudos_astronomia/planetas.dart';
 import 'package:astroapp/pages/indicacoes/principal.dart';
 import 'package:astroapp/pages/menu_astronautica.dart';
@@ -10,9 +11,10 @@ import 'package:flutter/material.dart';
 import 'package:astroapp/pages/cadastropage.dart';
 import 'package:astroapp/pages/loginpage.dart';
 import '../domain/noticias.dart';
+import '../domain/topicos.dart';
 import '../widget/lista_noticias_card.dart';
+import '../widget/lista_topicos_card.dart';
 import 'package:astroapp/data/bd.dart';
-
 import 'assuntosQuest_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,6 +26,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Future<List<Noticias>> listaNoticias = BD.getCardNoticias();
+  Future<List<Topicos>> listaTopicos = BD.getCardTopicos();
 
   @override
   Widget build(BuildContext context) {
@@ -239,7 +242,12 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Sobre(sobre: BD.listaSobre, sobreDesenvolvedores: BD.listaSobreDesenvolvedores, sobreRota: BD.listaRota)),
+                          MaterialPageRoute(
+                              builder: (context) => Sobre(
+                                  sobre: BD.listaSobre,
+                                  sobreDesenvolvedores:
+                                      BD.listaSobreDesenvolvedores,
+                                  sobreRota: BD.listaRota)),
                         );
                       },
                     ),
@@ -265,7 +273,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               buildListView(),
-
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
@@ -291,43 +298,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Center(
-                child: Container(
-                  margin: EdgeInsets.all(15.0),
-                  color: Colors.grey,
-                  width: 400,
-                  height: 270,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5.0, bottom: 2.0),
-                        child: Text(
-                          'Planetas',
-                          style: TextStyle(
-                            fontSize: 25,
-                          ),
-                        ),
-                      ),
-                      Image.network(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVrLVOeETJ1JaRoTqErkXH8qFSf-hhykYFQQ&usqp=CAU',
-                        width: 375,
-                        height: 170,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Planetas(),
-                            ));
-                          },
-                          child: Text('VER MAIS'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+
+              buildListViewTopicos(),
 
               //Sobre
 
@@ -347,7 +319,7 @@ class _HomePageState extends State<HomePage> {
                   margin: EdgeInsets.all(15.0),
                   color: Colors.grey,
                   width: 400,
-                  height: 390,
+                  height: 450,
                   child: Column(
                     children: [
                       Center(
@@ -382,7 +354,11 @@ class _HomePageState extends State<HomePage> {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Sobre(sobre: BD.listaSobre, sobreDesenvolvedores: BD.listaSobreDesenvolvedores, sobreRota: BD.listaRota),
+                              builder: (context) => Sobre(
+                                  sobre: BD.listaSobre,
+                                  sobreDesenvolvedores:
+                                      BD.listaSobreDesenvolvedores,
+                                  sobreRota: BD.listaRota),
                             ));
                           },
                           child: Text('VER MAIS'),
@@ -400,9 +376,12 @@ class _HomePageState extends State<HomePage> {
   buildListView() {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => NoticiasI(),
-        ));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => NoticiasI(),
+          ),
+        );
       },
       child: FutureBuilder<List<Noticias>>(
         future: listaNoticias,
@@ -423,6 +402,40 @@ class _HomePageState extends State<HomePage> {
           return const Center(child: CircularProgressIndicator());
         },
       ),
+    );
+  }
+
+  buildListViewTopicos() {
+    return InkWell(
+      onTap: () {},
+      child: FutureBuilder<List<Topicos>>(
+          future: listaTopicos,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              List<Topicos> listaTopicos = snapshot.data ?? [];
+
+              return ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: listaTopicos.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return CardTopicos(topicos: listaTopicos[index]);
+                },
+              );
+            } else if (snapshot.hasError) {
+              child:
+              Text(
+                'Não funcionou',
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              );
+            } else if (!snapshot.hasData) {
+              return const Center(child: CircularProgressIndicator());
+            }
+
+            return const Center(child: CircularProgressIndicator());
+          }),
     );
   }
 
