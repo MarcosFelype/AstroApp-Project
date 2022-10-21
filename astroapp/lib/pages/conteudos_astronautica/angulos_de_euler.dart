@@ -53,8 +53,8 @@ class _Angulos_De_EulerState extends State<Angulos_De_Euler> {
 
                         const SizedBox(height: 16),
                         Container(
-                          child: Image.network(
-                            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Eulerangles.svg/800px-Eulerangles.svg.png', height: 400,
+                          child: Image.asset(
+                            'assets/ang_euler.png', height: 400,
                           ),
                         ),
 

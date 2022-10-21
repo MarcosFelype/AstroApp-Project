@@ -6,6 +6,8 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   
 
+
+
   initDB() async {
     String databasePath = await getDatabasesPath();
     String path = join(databasePath, "pacote.db");

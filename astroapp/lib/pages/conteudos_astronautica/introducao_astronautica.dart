@@ -51,8 +51,8 @@ class _Introducao_AstronauticaState extends State<Introducao_Astronautica> {
 
                         const SizedBox(height: 16),
                         Container(
-                          child: Image.network(
-                            'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Soyuz_TMA-1.jpg/1200px-Soyuz_TMA-1.jpg',
+                          child: Image.asset(
+                            'assets/int_astronautica.jpg',
                           ),
                         ),
 

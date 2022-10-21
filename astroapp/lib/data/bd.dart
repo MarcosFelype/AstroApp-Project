@@ -1,9 +1,16 @@
+import 'package:astroapp/domain/menu_astro.dart';
 import 'package:astroapp/domain/noticias.dart';
 import 'package:astroapp/domain/questoes.dart';
-import 'package:astroapp/domain/sobre_des.dart';
-import 'package:astroapp/domain/sobre_img.dart';
-import 'package:astroapp/domain/sobre_rota.dart';
+import 'package:astroapp/domain/sobre.dart';
+import 'package:astroapp/pages/conteudos_astronautica/introducao_astronautica.dart';
 import 'package:astroapp/domain/topicos.dart';
+
+
+import '../pages/conteudos_astronautica/angulos_de_euler.dart';
+import '../pages/conteudos_astronautica/aplicacoes_da_astronautica.dart';
+import '../pages/conteudos_astronomia/constelacoes.dart';
+import '../pages/conteudos_astronomia/introducao_astronomia.dart';
+import '../pages/conteudos_astronomia/planetas.dart';
 
 class BD {
   static List<Questoes> lista = [
@@ -84,20 +91,20 @@ class BD {
   static List<Noticias> listaNoticias = [
     Noticias(
       imagem:
-          'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/06/78612212_2846136555417292_2868582208589791232_n.jpg?w=876&h=484&crop=1',
+          'assets/not1.jpg',
       titulo: 'Brasil será sede de lançamento de foguete sul-coreano',
       id: 'NotíciaI()',
     ),
     Noticias(
       imagem:
-          'https://media-manager.noticiasaominuto.com.br/1920/naom_630c8a20248e4.jpg',
+          'assets/not2.jpg',
       titulo:
           'James Webb encontra dióxido de carbono em planeta fora do Sistema Solar',
       id: 'NotíciaII()',
     ),
     Noticias(
       imagem:
-          'https://t.ctcdn.com.br/oQALVyFDz75lqmVeenWQPD2Y0Oo=/1024x0/smart/filters:format(webp)/i550320.jpeg',
+          'assets/not3.jpg',
       titulo: 'Unesp promoverá cursos sobre astronomia; saiba como participar',
       id: 'NotíciaIII()',
     )
@@ -107,88 +114,168 @@ class BD {
     Topicos(
         titulo: 'Planetas',
         imagem:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVrLVOeETJ1JaRoTqErkXH8qFSf-hhykYFQQ&usqp=CAU',
+            'assets/top1.jpg',
         conteudo: 'Planetas()'),
     Topicos(
         titulo: 'Constelações',
         imagem:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVrLVOeETJ1JaRoTqErkXH8qFSf-hhykYFQQ&usqp=CAU',
+            'assets/top2.jpg',
         conteudo: 'Constelacoes()')
   ];
 
-  static List<Sobre_img> listaSobre = [
-    Sobre_img(
-      img: 'assets/ig.png',
+  static List<Sobre> listaSobre = [
+    Sobre(
+      img:
+          'assets/ig.png',
+      desenvolvedores:
+          '@daniel_dbs7',
+      rota:
+          'https://www.instagram.com/daniel_dbs7/',
     ),
-    Sobre_img(
-      img: 'assets/wts.png',
+
+    Sobre(
+      img:
+          'assets/ig.png',
+      desenvolvedores:
+          '@icamicosta',
+      rota:
+          'https://www.instagram.com/icamicosta/',
+
     ),
+
+    Sobre(
+      img:
+          'assets/ig.png',
+      desenvolvedores:
+          '@marcosfelypesilva',
+      rota:
+          'https://www.instagram.com/marcosfelypesilva/',
+    ),
+
+    Sobre(
+      img:
+          'assets/ig.png',
+      desenvolvedores:
+          '@richardo_ahl.sill',
+      rota:
+          'https://www.instagram.com/richardo_ahl.sill/',
+    ),
+
+    Sobre(
+      img:
+          'assets/ig.png',
+      desenvolvedores:
+          '@v_magalhaees',
+      rota:
+          'https://www.instagram.com/v_magalhaees/',
+    ),
+
+
+
+    Sobre(
+      img:
+          'assets/wts.png',
+      desenvolvedores:
+          'Daniel Berg',
+      rota:
+          'https://api.whatsapp.com/send?phone=5582996591380',
+    ),
+    
+    Sobre(
+      img:
+          'assets/wts.png',
+      desenvolvedores:
+          'Içami Costa',
+      rota:
+          'https://api.whatsapp.com/send?phone=5582996136105',
+    ),
+
+    Sobre(
+      img:
+          'assets/wts.png',
+      desenvolvedores:
+          'Marcos Felype',
+      rota:
+          'https://api.whatsapp.com/send?phone=5582981930891',
+    ),
+
+    Sobre(
+      img:
+          'assets/wts.png',
+      desenvolvedores:
+          'Ricardo Alexandre',
+      rota:
+          'https://api.whatsapp.com/send?phone=5582999277242',
+    ),
+
+    Sobre(
+      img:
+          'assets/wts.png',
+      desenvolvedores:
+          'Vítor Magalhães',
+      rota:
+          'https://api.whatsapp.com/send?phone=5582981708764',
+    ),
+    
   ];
 
-  static List<Sobre_des> listaSobreDesenvolvedores = [
-    Sobre_des(
-      desenvolvedores: '@daniel_dbs7',
+  static List<Menu_astro> listaMenu = [
+    Menu_astro(
+      titulo:
+          "INTRODUÇÃO À ASTRONÁUTICA",
+      img:
+          'assets/int_astronautica.jpg',
+      rota:
+          Introducao_Astronautica(),
     ),
-    Sobre_des(
-      desenvolvedores: '@icamicosta',
-    ),
-    Sobre_des(
-      desenvolvedores: '@marcosfelypesilva',
-    ),
-    Sobre_des(
-      desenvolvedores: '@richardo_ahl.sill',
-    ),
-    Sobre_des(
-      desenvolvedores: '@v_magalhaees',
-    ),
-    Sobre_des(
-      desenvolvedores: 'Daniel Berg',
-    ),
-    Sobre_des(
-      desenvolvedores: 'Içami Costa',
-    ),
-    Sobre_des(
-      desenvolvedores: 'Marcos Felype',
-    ),
-    Sobre_des(
-      desenvolvedores: 'Ricardo Alexandre',
-    ),
-    Sobre_des(
-      desenvolvedores: 'Vítor Magalhães',
-    ),
-  ];
 
-  static List<Sobre_rota> listaRota = [
-    Sobre_rota(
-      rota: 'https://www.instagram.com/daniel_dbs7/',
+    Menu_astro(
+      titulo:
+          "ÂNGULOS DE EULER",
+      img:
+          'assets/ang_euler.png',
+      rota:
+          Angulos_De_Euler(),
     ),
-    Sobre_rota(
-      rota: 'https://www.instagram.com/icamicosta/',
+
+    Menu_astro(
+      titulo:
+          "APLICAÇÕES DA ASTRONÁUTICA",
+      img:
+          'assets/apl_astronautica.jpg',
+      rota:
+          Aplicacoes_Da_Astronautica(),
     ),
-    Sobre_rota(
-      rota: 'https://www.instagram.com/marcosfelypesilva/',
+
+
+
+    Menu_astro(
+      titulo:
+          "INTRODUÇÃO À ASTRONOMIA",
+      img:
+          'assets/int_astronomia.jpg',
+      rota:
+          Introducao_Astronomia(),
     ),
-    Sobre_rota(
-      rota: 'https://www.instagram.com/richardo_ahl.sill/',
+
+    Menu_astro(
+      titulo:
+          "PLANETAS",
+      img:
+          'assets/planetas.jpg',
+      rota:
+          Planetas(),
     ),
-    Sobre_rota(
-      rota: 'https://www.instagram.com/v_magalhaees/',
+
+    Menu_astro(
+      titulo:
+          "CONSTELAÇÕES",
+      img:
+          'assets/const.jpg',
+      rota:
+          Constelacoes(),
     ),
-    Sobre_rota(
-      rota: 'https://api.whatsapp.com/send?phone=5582996591380',
-    ),
-    Sobre_rota(
-      rota: 'https://api.whatsapp.com/send?phone=5582996136105',
-    ),
-    Sobre_rota(
-      rota: 'https://api.whatsapp.com/send?phone=5582981930891',
-    ),
-    Sobre_rota(
-      rota: 'https://api.whatsapp.com/send?phone=5582999277242',
-    ),
-    Sobre_rota(
-      rota: 'https://api.whatsapp.com/send?phone=5582981708764',
-    ),
+
   ];
 
   static Future<List<Questoes>> getCardQuestoes() async {
@@ -204,5 +291,15 @@ class BD {
   static Future<List<Topicos>> getCardTopicos() async {
     await Future.delayed(const Duration(seconds: 10));
     return listaTopicos;
+  }
+
+  static Future<List<Sobre>> getCardSobre() async {
+    await Future.delayed(const Duration(seconds: 5));
+    return listaSobre;
+  }
+
+  static Future<List<Menu_astro>> getCardMenuAstro() async {
+    await Future.delayed(const Duration(seconds: 5));
+    return listaMenu;
   }
 }

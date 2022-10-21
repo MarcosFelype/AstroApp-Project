@@ -51,8 +51,8 @@ class ConstelacoesState extends State<Constelacoes> {
 
                         const SizedBox(height: 16),
                         Container(
-                          child: Image.network(
-                             'https://www.institutoclaro.org.br/educacao/wp-content/uploads/sites/2/2020/12/constelacao-scaled.jpg',
+                          child: Image.asset(
+                             'assets/const.jpg',
                           ),
                         ),
 

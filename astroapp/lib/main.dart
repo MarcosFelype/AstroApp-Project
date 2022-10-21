@@ -13,7 +13,3 @@ void main() {
     ),
   );
 }
-
-// Ver vídeo https://www.youtube.com/watch?v=xZmTxHZ_0AM
-// Lotie (animações personalizadas) ex.: https://lottiefiles.com/search?q=foguete&category=animations 
-// Criar animação (https://app.animaker.com/editproject/Gc3ttKz9CBJ20WAp) 

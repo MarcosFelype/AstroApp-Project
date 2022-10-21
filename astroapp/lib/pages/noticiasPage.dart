@@ -5,7 +5,7 @@ import 'package:astroapp/pages/menu_astronomia.dart';
 import 'package:astroapp/pages/noticias/noticicaI.dart';
 import 'package:astroapp/pages/noticiasPage.dart';
 import 'package:astroapp/pages/novidadesPage.dart';
-import 'package:astroapp/pages/sobre.dart';
+import 'package:astroapp/pages/extra.dart';
 import 'package:flutter/material.dart';
 import 'package:astroapp/pages/cadastropage.dart';
 import 'package:astroapp/pages/loginpage.dart';

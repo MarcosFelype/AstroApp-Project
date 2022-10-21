@@ -1,20 +1,20 @@
-import 'package:astroapp/domain/topicos.dart';
 import 'package:astroapp/pages/conteudos_astronomia/planetas.dart';
+import 'package:astroapp/domain/topicos.dart';
 import 'package:astroapp/pages/indicacoes/principal.dart';
 import 'package:astroapp/pages/menu_astronautica.dart';
 import 'package:astroapp/pages/menu_astronomia.dart';
 import 'package:astroapp/pages/noticias/noticicaI.dart';
 import 'package:astroapp/pages/noticiasPage.dart';
 import 'package:astroapp/pages/novidadesPage.dart';
-import 'package:astroapp/pages/sobre.dart';
+import 'package:astroapp/pages/extra.dart';
 import 'package:flutter/material.dart';
 import 'package:astroapp/pages/cadastropage.dart';
 import 'package:astroapp/pages/loginpage.dart';
 import '../domain/noticias.dart';
-import '../domain/topicos.dart';
 import '../widget/lista_noticias_card.dart';
-import '../widget/lista_topicos_card.dart';
 import 'package:astroapp/data/bd.dart';
+
+import '../widget/lista_topicos_card.dart';
 import 'assuntosQuest_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -242,12 +242,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => Sobre(
-                                  sobre: BD.listaSobre,
-                                  sobreDesenvolvedores:
-                                      BD.listaSobreDesenvolvedores,
-                                  sobreRota: BD.listaRota)),
+                          MaterialPageRoute(builder: (context) => Extra(listaSobre: BD.listaSobre)),
                         );
                       },
                     ),
@@ -273,6 +268,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               buildListView(),
+
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
@@ -298,7 +294,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-
+              
               buildListViewTopicos(),
 
               //Sobre
@@ -354,11 +350,7 @@ class _HomePageState extends State<HomePage> {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Sobre(
-                                  sobre: BD.listaSobre,
-                                  sobreDesenvolvedores:
-                                      BD.listaSobreDesenvolvedores,
-                                  sobreRota: BD.listaRota),
+                              builder: (context) => Extra(listaSobre: BD.listaSobre),
                             ));
                           },
                           child: Text('VER MAIS'),
@@ -438,6 +430,7 @@ class _HomePageState extends State<HomePage> {
           }),
     );
   }
+
 
   void onTap() {
     Navigator.push(

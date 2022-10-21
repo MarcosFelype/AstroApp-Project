@@ -51,8 +51,8 @@ class PlanetasState extends State<Planetas> {
 
                         const SizedBox(height: 16),
                         Container(
-                          child: Image.network(
-                           'https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3239440:1654285746/Sistema-Solar.jpg',
+                          child: Image.asset(
+                           'assets/planetas.jpg',
                           ),
                         ),
 

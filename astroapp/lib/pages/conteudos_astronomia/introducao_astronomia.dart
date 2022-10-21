@@ -51,8 +51,8 @@ class Introducao_AstronomiaState extends State<Introducao_Astronomia> {
 
                         const SizedBox(height: 16),
                         Container(
-                          child: Image.network(
-                            'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Starsinthesky.jpg/1200px-Starsinthesky.jpg',
+                          child: Image.asset(
+                            'assets/int_astronomia.jpg',
                           ),
                         ),
 

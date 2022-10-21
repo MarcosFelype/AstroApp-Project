@@ -46,8 +46,8 @@ class _Aplicacoes_Da_AstronauticaState
                         )),
                         const SizedBox(height: 16),
                         Container(
-                          child: Image.network(
-                            'https://upload.wikimedia.org/wikipedia/commons/0/0f/Artist%27s_Conception_of_Space_Station_Freedom_-_GPN-2003-00092.jpg',
+                          child: Image.asset(
+                            'assets/apl_astronautica.jpg',
                           ),
                         ),
                         Container(

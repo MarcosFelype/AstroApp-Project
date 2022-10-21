@@ -36,14 +36,14 @@ class _CardNoticiasState extends State<CardNoticias> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ]),
+                  ]
+              ),
             )
           ],
         ),
       ),
     );
   }
-
   buildImage() {
     return Stack(
       children: [
@@ -51,7 +51,7 @@ class _CardNoticiasState extends State<CardNoticias> {
           borderRadius: const BorderRadius.vertical(
             top: Radius.circular(8),
           ),
-          child: Image.network(widget.noticias.imagem),
+          child: Image.asset(widget.noticias.imagem),
         ),
       ],
     );
