@@ -3,6 +3,13 @@ import 'package:astroapp/domain/user.dart';
 import 'package:sqflite/sqflite.dart';
 
 class UserDao {
+  Future<void> salvarUser({required User user}) async {
+    DBHelper dbHelper = DBHelper();
+    Database db = await dbHelper.initDB();
+
+    await db.insert('user', user.toJson());
+  }
+
   Future<bool> autenticar(
       {required String user, required String password}) async {
     DBHelper dbHelper = DBHelper();
