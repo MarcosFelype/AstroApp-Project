@@ -15,7 +15,7 @@ class CardRedes extends StatefulWidget {
 class _CardRedesState extends State<CardRedes> {
   @override
   Future<void> chamarInsta() async{
-  final Uri _url = Uri.parse(widget.redes.link_insta);
+  final Uri _url = Uri.parse(widget.redes.linkInsta);
 
   if (!await launchUrl(
     _url,
@@ -26,7 +26,7 @@ class _CardRedesState extends State<CardRedes> {
   }
 
   Future<void> chamarTelegram() async{
-  final Uri _url = Uri.parse(widget.redes.link_tel);
+  final Uri _url = Uri.parse(widget.redes.linkTel);
 
   if (!await launchUrl(
     _url,

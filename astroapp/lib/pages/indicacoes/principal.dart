@@ -1,4 +1,4 @@
-import 'package:astroapp/data/indicacoes/principal_bd.dart';
+import 'package:astroapp/data/indicacoes/indicacoes_helper.dart';
 import 'package:astroapp/domain/indicacoes/principal_domain.dart';
 import 'package:astroapp/pages/indicacoes/subPages/livros.dart';
 import 'package:astroapp/pages/indicacoes/subPages/outrasredes.dart';
@@ -16,7 +16,7 @@ class IndicacoesPage extends StatefulWidget {
 
 class _IndicacoesPageState extends State<IndicacoesPage> {
   
-  Future<List<PrincipalDomain>> lista_principal = PrincipalData.getListaIndicacoes();
+  //Future<List<PrincipalDomain>> lista_principal = PrincipalData.getListaIndicacoes();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _IndicacoesPageState extends State<IndicacoesPage> {
 
   principalListView() {
     return FutureBuilder<List<PrincipalDomain>>(
-      future: lista_principal,
+      //future: lista_principal,
       builder: ((context, snapshot) {
         
         if(snapshot.hasData) {

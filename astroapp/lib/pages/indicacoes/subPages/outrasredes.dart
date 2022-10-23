@@ -15,7 +15,7 @@ class OutrasRedes extends StatefulWidget {
 
 class _OutrasRedesState extends State<OutrasRedes> {
 
-  Future<List<RedesDomain>> lista_redes = RedesData.getRedes();
+  //Future<List<RedesDomain>> lista_redes = RedesData.getRedes();
 
   
   
@@ -59,7 +59,7 @@ class _OutrasRedesState extends State<OutrasRedes> {
 
   redesListView() {
     return FutureBuilder<List<RedesDomain>>(
-      future: lista_redes,
+      //future: lista_redes,
       builder: (context, snapshot){
         
         if(snapshot.hasData){

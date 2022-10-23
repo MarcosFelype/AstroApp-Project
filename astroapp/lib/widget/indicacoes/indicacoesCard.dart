@@ -39,7 +39,7 @@ class _IndicacoesCardState extends State<IndicacoesCard> {
           child: Column(
             children: [
               Text(
-                widget.principal_domain.titulocard,
+                widget.principal_domain.tituloCard,
                 style: TextStyle(
                   fontSize: 24,
                 ),
@@ -59,11 +59,11 @@ class _IndicacoesCardState extends State<IndicacoesCard> {
   }
 
   void onTap() {
-    if (widget.principal_domain.titulocard == 'Canais do YouTube') {
+    if (widget.principal_domain.tituloCard == 'Canais do YouTube') {
       youtubeBuilder();
-    } else if (widget.principal_domain.titulocard == 'Sites') {
+    } else if (widget.principal_domain.tituloCard == 'Sites') {
       sitesBuilder();
-    } else if (widget.principal_domain.titulocard ==
+    } else if (widget.principal_domain.tituloCard ==
         'Livros e materiais diversos') {
       livrosBuilder();
     } else {
