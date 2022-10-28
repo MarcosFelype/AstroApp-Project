@@ -1,10 +1,10 @@
-import 'package:astroapp/data/indicacoes/indicacoes_helper.dart';
+import 'package:astroapp/data/db_helper.dart';
 import 'package:astroapp/domain/indicacoes/principal_domain.dart';
 import 'package:sqflite/sqflite.dart';
 
 class IndicacoesDAO {
   Future<List<PrincipalDomain>> listarPrincipalIndicacoes() async {
-    IndicacoesHelper indHelper = IndicacoesHelper();
+    DBHelper indHelper = DBHelper();
     Database db = await indHelper.initDB();
 
     String sql = 'SELECT * FROM PRINCIPAL_INDICACOES';

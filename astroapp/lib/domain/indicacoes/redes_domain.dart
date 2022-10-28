@@ -5,13 +5,15 @@ class RedesDomain {
   late String texto;
   late String linkInsta;
   late String linkTel;
+  late String tipoIndicacao;
 
   RedesDomain({
-    required this.nome,
-    required this.imagem,
-    required this.texto,
-    required this.linkInsta,
-    required this.linkTel,
+      required this.nome,
+      required this.imagem,
+      required this.texto,
+      required this.linkInsta,
+      required this.linkTel,
+      required this.tipoIndicacao
   });
 
   RedesDomain.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class RedesDomain {
     texto = json['texto'];
     linkInsta = json['linkInsta'];
     linkTel = json['linkTel'];
+    tipoIndicacao = json['tipoIndicacao'];
   }
 
   Map<String, dynamic> toJson() {
@@ -29,6 +32,7 @@ class RedesDomain {
     texto = data['texto'];
     linkInsta = data['linkInsta'];
     linkTel = data['linkTel'];
+    tipoIndicacao = data['tipoIndicacao'];
 
     return data;
   }
