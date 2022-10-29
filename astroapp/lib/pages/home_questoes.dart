@@ -1,3 +1,5 @@
+import 'package:astroapp/data/questoes_dao.dart';
+import 'package:astroapp/pages/homePage.dart';
 import 'package:astroapp/widget/lista_questoes_card.dart';
 import 'package:flutter/material.dart';
 import 'package:astroapp/domain/questoes.dart';
@@ -13,7 +15,7 @@ class HomeQuestoes extends StatefulWidget {
 
 class _HomeQuestoesState extends State<HomeQuestoes> {
 
-  Future<List<Questoes>> lista = BD.getCardQuestoes();
+  Future<List<Questoes>> lista = QuestoesDao().listarQuestoes();
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class _HomeQuestoesState extends State<HomeQuestoes> {
         ),
       ),
       backgroundColor: Colors.grey[100],
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
@@ -38,6 +41,7 @@ class _HomeQuestoesState extends State<HomeQuestoes> {
       ),
     );
   }
+
   buildListView() {
     return FutureBuilder<List<Questoes>>(
       future: lista,
@@ -61,4 +65,5 @@ class _HomeQuestoesState extends State<HomeQuestoes> {
       },
     );
   }
+
 }
