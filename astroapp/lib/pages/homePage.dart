@@ -242,9 +242,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  Extra(listaSobre: BD.listaSobre)),
+                          MaterialPageRoute(builder: (context) => Extra(listaSobre: BD.listaSobre)),
                         );
                       },
                     ),
@@ -296,7 +294,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-
+              
               buildListViewTopicos(),
 
               //Sobre
@@ -352,8 +350,7 @@ class _HomePageState extends State<HomePage> {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) =>
-                                  Extra(listaSobre: BD.listaSobre),
+                              builder: (context) => Extra(listaSobre: BD.listaSobre),
                             ));
                           },
                           child: Text('VER MAIS'),
@@ -433,6 +430,7 @@ class _HomePageState extends State<HomePage> {
           }),
     );
   }
+
 
   void onTap() {
     Navigator.push(
