@@ -1,3 +1,4 @@
+import 'package:astroapp/data/assuntos_dao.dart';
 import 'package:astroapp/domain/menu_astro.dart';
 import 'package:astroapp/widget/card_menu.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class Menu_Astronautica extends StatefulWidget {
 }
 
 class Menu_AstronauticaState extends State<Menu_Astronautica> {
-Future<List<Menu_astro>> listaMenu = BD.getCardMenuAstro();
+Future<List<Menu_astro>> listaMenu = AssuntosDao().listarPacotes();
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +75,7 @@ Future<List<Menu_astro>> listaMenu = BD.getCardMenuAstro();
     return FutureBuilder<List<Menu_astro>>(
       future: listaMenu,
       builder: ((context, snapshot) {
+        
         if (snapshot.hasData) {
           List<Menu_astro> listaMenu = snapshot.data ?? [];
 
