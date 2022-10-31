@@ -1,3 +1,4 @@
+import 'package:astroapp/data/assuntos_dao.dart';
 import 'package:flutter/material.dart';
 
 import '../data/bd.dart';
@@ -13,7 +14,7 @@ class Menu_Astronomia extends StatefulWidget {
 }
 
 class Menu_AstronomiaState extends State<Menu_Astronomia> {
-Future<List<Menu_astro>> listaMenu = BD.getCardMenuAstro();
+Future<List<Menu_astro>> listaMenu = AssuntosDao().listarPacotes();
 
   @override
   Widget build(BuildContext context) {
@@ -80,10 +81,10 @@ Future<List<Menu_astro>> listaMenu = BD.getCardMenuAstro();
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: listaMenu.length~/2,
+            itemCount: listaMenu.length,
             itemBuilder: (context, index) {
               return CardMenu(
-                menu_astro: listaMenu[index+(listaMenu.length~/2)],
+                menu_astro: listaMenu[index],
               );
             },
           );
