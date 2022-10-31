@@ -218,7 +218,7 @@ class BD {
     ),
     
   ];
-
+/*
   static List<Menu_astro> listaMenu = [
     Menu_astro(
       titulo:
@@ -276,7 +276,7 @@ class BD {
           Constelacoes(),
     ),
 
-  ];
+  ];*/
 
   static Future<List<Questoes>> getCardQuestoes() async {
     await Future.delayed(const Duration(seconds: 10));
@@ -297,9 +297,9 @@ class BD {
     await Future.delayed(const Duration(seconds: 5));
     return listaSobre;
   }
-
+/*
   static Future<List<Menu_astro>> getCardMenuAstro() async {
     await Future.delayed(const Duration(seconds: 5));
     return listaMenu;
-  }
+  }*/
 }
