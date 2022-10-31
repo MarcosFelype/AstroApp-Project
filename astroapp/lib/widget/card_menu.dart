@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class CardMenu extends StatefulWidget {
   final Menu_astro menu_astro;
 
-  const CardMenu({Key? key, required this.menu_astro})
+  const CardMenu({Key? key, 
+  required this.menu_astro})
       : super(key: key);
 
   @override
@@ -14,6 +15,8 @@ class CardMenu extends StatefulWidget {
 class _CardMenu extends State<CardMenu> {
   @override
   Widget build(BuildContext context) {
+
+    Size size = MediaQuery.of(context).size;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 75.0),
@@ -35,7 +38,7 @@ class _CardMenu extends State<CardMenu> {
               ),
             ),
             Image.asset(
-              widget.menu_astro.img,
+              widget.menu_astro.imagem,
             ),
           ],
         ),
