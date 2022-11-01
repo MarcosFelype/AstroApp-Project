@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const CadastroPage();
+          return const CadastroUser();
         },
       ),
     );

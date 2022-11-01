@@ -1,3 +1,4 @@
+import 'package:astroapp/data/noticias_dao.dart';
 import 'package:astroapp/pages/conteudos_astronomia/planetas.dart';
 import 'package:astroapp/pages/indicacoes/principal.dart';
 import 'package:astroapp/pages/menu_astronautica.dart';
@@ -23,7 +24,7 @@ class NoticiasPage extends StatefulWidget {
 }
 
 class _NoticiasPageState extends State<NoticiasPage> {
-  Future<List<Noticias>> listaNoticias = BD.getCardNoticias();
+  Future<List<Noticias>> listaNoticias = NoticiasDao().getCardNoticias();
 
   @override
   Widget build(BuildContext context) {
