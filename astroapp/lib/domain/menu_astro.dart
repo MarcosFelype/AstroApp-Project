@@ -1,11 +1,31 @@
-class Menu_astro{
-  final String titulo;
-  final String img;
-  final dynamic rota;
+class Menu_astro {
+  late final String genero;
+  late final String titulo;
+  late final String imagem;
+  late final dynamic rota;
 
   Menu_astro({
+    required this.genero,
+    required this.imagem,
     required this.titulo,
-    required this.img,
     required this.rota,
   });
+
+  Map<String, Object?> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['genero'] = genero;
+    data['imagem'] = imagem;
+    data['titulo'] = titulo;
+    data['rota'] = rota;
+
+    return data;
+  }
+  
+  Menu_astro.fromJson(Map<String, dynamic> json){
+    genero = json['genero'];
+    imagem = json['imagem'];
+    titulo = json['titulo'];
+    rota = json['rota'];
+  }
 }
