@@ -15,7 +15,7 @@ class Menu_Astronautica extends StatefulWidget {
 
 class Menu_AstronauticaState extends State<Menu_Astronautica> {
 
-Future<List<Menu_astro>> lista = AssuntosDao().listarPacotes();
+Future<List<Menu_astro>> lista = AssuntosDao.listarPacotes('astronautica');
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +73,7 @@ Future<List<Menu_astro>> lista = AssuntosDao().listarPacotes();
   }
 
   MenuListView() {
+    
     return FutureBuilder<List<Menu_astro>>(
       future: lista,
       builder: ((context, snapshot) {
@@ -83,7 +84,7 @@ Future<List<Menu_astro>> lista = AssuntosDao().listarPacotes();
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 3,
+            itemCount: lista.length,
             itemBuilder: (BuildContext context, int index) {
               return CardMenu(menu_astro: lista[index]);
             },

@@ -13,7 +13,7 @@ class Menu_Astronomia extends StatefulWidget {
 }
 
 class Menu_AstronomiaState extends State<Menu_Astronomia> {
-  Future<List<Menu_astro>> lista = AssuntosDao().listarPacotes();
+  Future<List<Menu_astro>> lista = AssuntosDao.listarPacotes('astronomia');
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +74,9 @@ class Menu_AstronomiaState extends State<Menu_Astronomia> {
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 3,
+            itemCount: lista.length,
             itemBuilder: (BuildContext context, int index) {
-              return CardMenu(menu_astro: lista[index+(lista.length~/2)]);
+              return CardMenu(menu_astro: lista[index]);
             },
           );
         } else {
