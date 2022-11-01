@@ -1,3 +1,4 @@
+
 import 'package:astroapp/domain/indicacoes/redes_domain.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -89,3 +90,4 @@ class _CardRedesState extends State<CardRedes> {
     );
   }
 }
+

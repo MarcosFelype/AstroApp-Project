@@ -130,5 +130,27 @@ class DBHelper {
     sql_redes =
         "INSERT INTO redes_indicacoes (nome, imagem, texto, linkInsta, linkTel, tipoIndicacao) VALUES ('Virgílio', 'https://yt3.ggpht.com/ytc/AMLnZu95CkFKE3pg_bZJwKip8kUhvSaIlk1LeSfKu9GuaA=s900-c-k-c0x00ffffff-no-rj', 'Sim, ele mesmo. O dono do canal ABF! :)', 'https://www.instagram.com/abf_astrobiofisica/', 'https://t.me/s/astronomia_abf', 'Outras Redes');";
     await db.execute(sql_redes);
+
+    /********* NOTICIAS *********/
+
+    String sqlnoticias =
+        "CREATE TABLE NOTICIAS (imagem varchar(100), titulo varchar(100) PRIMARY KEY, id varchar(100))";
+    await db.execute(sqlnoticias);
+
+    sqlnoticias =
+        "INSERT INTO NOTICIAS (imagem, titulo, id) VALUES ('assets/not1.jpg', 'Brasil lança novo foguete nacional', 'NoticiaI()')";
+    await db.execute(sqlnoticias);
+
+    sqlnoticias =
+        "INSERT INTO NOTICIAS (imagem, titulo, id) VALUES ('assets/not2.jpg', 'SQL funcioou galeraa!!!', 'NoticiaII()')";
+    await db.execute(sqlnoticias);
+
+    sqlnoticias =
+        "INSERT INTO NOTICIAS (imagem, titulo, id) VALUES ('assets/not3.jpg', 'Scott e Chichi promoverão cursos sobre astronomia; saiba como participar', 'NoticiaIII()')";
+    await db.execute(sqlnoticias);
+
+    sqlnoticias =
+        "INSERT INTO NOTICIAS (imagem, titulo, id) VALUES ('assets/not1.jpg', 'Professor de astronomia de Bauru explica como observar pico de chuva de meteoros visível na região', 'NoticiaIV()')";
+    await db.execute(sqlnoticias);
   }
 }

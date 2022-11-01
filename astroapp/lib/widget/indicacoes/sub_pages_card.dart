@@ -1,3 +1,4 @@
+
 import 'package:astroapp/domain/indicacoes/subpages_domain.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -85,7 +86,4 @@ class _SubPagesCardState extends State<SubPagesCard> {
 
     
   }
-
-
-  
 }

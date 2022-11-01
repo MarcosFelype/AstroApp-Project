@@ -1,3 +1,4 @@
+
 import 'package:astroapp/domain/indicacoes/principal_domain.dart';
 import 'package:astroapp/pages/indicacoes/outrasredes.dart';
 import 'package:astroapp/pages/indicacoes/subpages.dart';
@@ -72,3 +73,4 @@ class _IndicacoesCardState extends State<IndicacoesCard> {
     );
   }
 }
+
