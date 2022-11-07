@@ -39,8 +39,7 @@ class AssuntosDao {
     return lista;
   }
 
-  static Future<List<Menu_astro>> listarAssuntos(
-      String rota) async {
+  static Future<List<Menu_astro>> listarAssuntos(String rota) async {
     DBHelper subHelper = DBHelper();
     Database db = await subHelper.initDB();
 
@@ -52,6 +51,9 @@ class AssuntosDao {
     for (var json in result) {
       Menu_astro assuntos = Menu_astro.fromJson(json);
       listaAssuntos.add(assuntos);
+    }
+    for (var i in listaAssuntos) {
+      print(i.titulo);
     }
     return listaAssuntos;
   }

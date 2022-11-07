@@ -13,7 +13,7 @@ class Constelacoes extends StatefulWidget {
 }
 
 class ConstelacoesState extends State<Constelacoes> {
-  Future<List<Menu_astro>> lista = AssuntosDao.listarAssuntos('Constelacoes()');
+  Future<List<Menu_astro>> lista = AssuntosDao.listarPacotes('astronomia');
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class ConstelacoesState extends State<Constelacoes> {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: 1,
             itemBuilder: (BuildContext context, int index) {
-              index = 3;
+              index = 0;
               return CardAssuntos(menu_astro: lista[index]);
             },
           );
