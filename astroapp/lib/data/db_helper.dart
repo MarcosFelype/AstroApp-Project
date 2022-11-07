@@ -15,7 +15,6 @@ class DBHelper {
   }
 
   Future<FutureOr<void>> onCreate(Database db, int version) async {
-    
     /********** USUÁRIOS **********/
 
     String sql =
@@ -156,12 +155,12 @@ class DBHelper {
         "INSERT INTO NOTICIAS (imagem, titulo, id) VALUES ('assets/not1.jpg', 'Professor de astronomia de Bauru explica como observar pico de chuva de meteoros visível na região', 'NoticiaIV()')";
     await db.execute(sqlnoticias);
 
-    /******* ASSUNTOS *******/  
+    /******* ASSUNTOS *******/
 
     //CREATE TABLE
 
     String sqlassunto =
-        "CREATE TABLE assuntos (genero varchar(100), titulo varchar(100), imagem varchar(200), rota varchar(100), conteudo varchar(1500))";
+        "CREATE TABLE assuntos (genero varchar(100), titulo varchar(100), imagem varchar(200), rota varchar(100), conteudo varchar(7500))";
     await db.execute(sqlassunto);
 
     //INSERT INTO
@@ -173,7 +172,7 @@ class DBHelper {
     await db.execute(sqlassunto);
 
     sqlassunto =
-        "INSERT INTO assuntos (genero, titulo, imagem, rota, conteudo) VALUES ('astronautica', 'Aplicações da Astronáutica', 'assets/apl_astronautica.jpg', 'Aplicacoes_Da_Astronautica()', 'Desde o lançamento do satélite Sputnik em 1957 — o primeiro objeto enviado à órbita da Terra na história —, a tecnologia espacial evoluiu a passos largos, permitindo que a humanidade pisasse na Lua, que existisse uma estação espacial em órbita abrigando turmas periódicas de astronautas, e que sondas científicas estudassem de perto diversos outros mundos do Sistema Solar — com duas delas já tendo alcançado o espaço interestelar, por sinal. Para que missões do tipo sejam possíveis, são precisos muitos anos de desenvolvimento de novas tecnologias, e diversas delas acabam sendo adaptadas para beneficiar a humanidade aqui mesmo na Terra.\n\nHoje, uma variedade fascinante de coisas que fazem parte do nosso dia a dia devem sua existência às tecnologias espaciais. Nesta matéria, você confere algumas tecnologias que você usa e que foram desenvolvidas, na verdade, para a exploração espacial, mas que acabaram beneficiando e até mesmo transformando a nossa vida em sociedade.\n\nTecnologias espaciais que beneficiam a humanidade:\nFiltro de água;\nCâmera de celular;\nTênis de corrida;\nLentes refletoras de raios ultravioleta e resistentes a arranhões;\nEtc.\n)";
+        "INSERT INTO assuntos (genero, titulo, imagem, rota, conteudo) VALUES ('astronautica', 'Aplicações da Astronáutica', 'assets/apl_astronautica.jpg', 'Aplicacoes_Da_Astronautica()', 'ADICIONAR AQUI')";
     await db.execute(sqlassunto);
 
     sqlassunto =
