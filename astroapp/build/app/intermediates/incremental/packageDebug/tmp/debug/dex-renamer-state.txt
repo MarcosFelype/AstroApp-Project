@@ -1,4 +1,4 @@
-#Mon Oct 31 22:41:42 BRT 2022
-base.0=C\:\\Users\\FELIPE\\Documents\\AstroApp-Project\\astroapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Mon Nov 07 17:08:35 BRT 2022
+base.0=C\:\\Users\\Aluno\\Documents\\vitinhoo\\AstroApp-Project\\astroapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
