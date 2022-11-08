@@ -28,8 +28,8 @@ class AssuntosDao {
     Database db = await subHelper.initDB();
 
     String sqlassunto =
-        "SELECT * FROM assuntos WHERE genero = '$tipoGenero';";
-    final result = await db.rawQuery(sqlassunto);
+        "SELECT * FROM assuntos WHERE genero = ?;";
+    final result = await db.rawQuery(sqlassunto, [tipoGenero]);
 
     List<Menu_astro> lista = <Menu_astro>[];
     for (var json in result) {
@@ -44,8 +44,8 @@ class AssuntosDao {
     Database db = await subHelper.initDB();
 
     String sqlassunto =
-        "SELECT * FROM assuntos WHERE rota = '$rota';";
-    final result = await db.rawQuery(sqlassunto);
+        "SELECT * FROM assuntos WHERE rota = ?;";
+    final result = await db.rawQuery(sqlassunto, [rota]);
 
     List<Menu_astro> listaAssuntos = <Menu_astro>[];
     for (var json in result) {

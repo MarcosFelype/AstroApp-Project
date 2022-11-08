@@ -25,9 +25,9 @@ class IndicacoesDAO {
     DBHelper subHelper = DBHelper();
     Database db = await subHelper.initDB();
 
-    String sql =
-        "SELECT * FROM subpages_indicacoes WHERE tipoIndicacao = '$tipoIndicacao';";
-    final result = await db.rawQuery(sql);
+    String sql = "SELECT * FROM subpages_indicacoes WHERE tipoIndicacao = ?";
+        //"SELECT * FROM subpages_indicacoes WHERE tipoIndicacao = '$tipoIndicacao';"; => erro: SQL injeption!
+    final result = await db.rawQuery(sql, [tipoIndicacao]);
 
     List<SubPagesDomain> lista_subpages = <SubPagesDomain>[];
     for (var json in result) {
